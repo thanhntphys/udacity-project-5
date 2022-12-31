@@ -1,14 +1,10 @@
 pipeline {
     agent any
-    // environment {
-    //     AWS_ACCESS_KEY_ID = credentials('jenkins-aws-secret-key-id')
-    //     AWS_SECRET_ACCESS_KEY = credentials('jenkins-aws-secret-access-key')
-    //     AWS_REGION = "ap-southeast-1"
-    // }
+    
     stages {
         stage("LINTING") {
             steps   {
-                sh "/usr/bin/hadolint Dockerfile"
+                sh "/usr/bin/hadolint --ignore DL3006 Dockerfile"
             }  
         }
         stage("BUILD") {
