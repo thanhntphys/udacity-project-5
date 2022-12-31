@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 
-aws eks --region ap-southeast-1 update-kubeconfig --name udacity-cluster
+aws eks --region us-east-1 update-kubeconfig --name udacity-cluster

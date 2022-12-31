@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: thanhnt-app
+  name: thanhnt-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: thanhnt-app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: thanhnt-app
+    spec:
+      containers:
+      - image: NONEXIST
+        name: thanhnt-app
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: thanhnt-secret-ecr
