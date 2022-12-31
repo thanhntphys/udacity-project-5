@@ -20,7 +20,7 @@ spec:
         app: thanhnt-app
     spec:
       containers:
-      - image: NONEXIST
+      - image: 296665253765.dkr.ecr.us-east-1.amazonaws.com/udacity-prj5:NONEXIST
         name: thanhnt-app
         ports:
         - containerPort: 80
